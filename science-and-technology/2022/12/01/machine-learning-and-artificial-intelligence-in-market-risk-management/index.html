@@ -1,1 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Machine learning and artificial intelligence in market risk management | Economist</title>
+
+  <meta
+    name="description"
+    content="How artificial intelligence and machine learning are reshaping market risk management, from deep reinforcement learning and stress prediction to systemic risk and data infrastructure."
+  >
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      margin: 0;
+      background: #ffffff;
+      color: #222222;
+    }
+
+    header {
+      background: #ffffff;
+      padding: 0;
+      border-bottom: 1px solid #dddddd;
+    }
+
+    header .brand {
+      width: 200px;
+      height: 98px;
+      background: #e3120b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    header .brand a {
+      color: #ffffff;
+      text-decoration: none;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 33px;
+      font-weight: bold;
+      line-height: 0.9;
+      letter-spacing: -0.03em;
+    }
+
+    header .brand a span {
+      display: block;
+    }
+
+    .section-bar {
+      background: #f5f5f5;
+      padding: 12px 24px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border-bottom: 1px solid #dddddd;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .article-title {
+      font-size: 32px;
+      line-height: 1.25;
+      margin: 0 0 12px;
+    }
+
+    .article-subtitle {
+      font-size: 18px;
+      line-height: 1.5;
+      color: #555555;
+      margin-bottom: 18px;
+    }
+
+    .article-meta {
+      font-size: 14px;
+      color: #777777;
+      margin-bottom: 28px;
+    }
+
+    .article-body p {
+      font-size: 17px;
+      line-height: 1.7;
+      margin: 0 0 18px;
+    }
+
+    .article-body h2 {
+      font-size: 24px;
+      line-height: 1.3;
+      margin: 36px 0 14px;
+    }
+
+    .article-body h3 {
+      font-size: 20px;
+      line-height: 1.35;
+      margin: 28px 0 12px;
+    }
+
+    .article-body ul,
+    .article-body ol {
+      font-size: 17px;
+      line-height: 1.7;
+      margin: 0 0 20px 24px;
+      padding: 0;
+    }
+
+    .article-body li {
+      margin-bottom: 8px;
+    }
+
+    .keywords {
+      font-size: 15px !important;
+      color: #555555;
+      margin: 20px 0 30px !important;
+    }
+
+    .copyright {
+      font-size: 14px !important;
+      line-height: 1.6 !important;
+      color: #666666;
+      padding-top: 14px;
+      margin-top: 26px !important;
+      border-top: 1px solid #dddddd;
+    }
+
+    .references {
+      padding-left: 24px;
+      margin-top: 18px;
+    }
+
+    .references li {
+      font-size: 15px;
+      line-height: 1.55;
+      margin-bottom: 13px;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 24px;
+      font-size: 13px;
+      color: #777777;
+      border-top: 1px solid #dddddd;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        padding: 20px;
+      }
+
+      .article-title {
+        font-size: 28px;
+      }
+
+      .article-body p,
+      .article-body ul,
+      .article-body ol {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand">
+    <a href="/">
+      <span>The</span>
+      <span>Economist</span>
+    </a>
+  </div>
+</header>
+
+<div class="section-bar">
+  Science &amp; Technology
+</div>
+
+<main class="container">
+
+  <h1 class="article-title">
+    Machine Learning and Artificial Intelligence in Market Risk Management:
+    A Review of Contemporary Approaches
+  </h1>
+
+  <p class="article-subtitle">
+    How deep reinforcement learning, stress prediction, data infrastructure and
+    AI-induced systemic risk are reshaping the way banks manage market risk.
+  </p>
+
+  <div class="article-meta">
+    Dec 1st 2024 • By Shweta Khosla • Economist
+  </div>
+
+  <article class="article-body">
+
+    <h2>Acknowledgments</h2>
+
+    <p>
+      This work was conducted by Shweta Khosla, whose industry experience in financial
+      services and technology—including senior roles at HSBC, Bank of America, and Citibank—
+      informed the practical market risk management perspectives in this paper. Having spent
+      over 14 years designing and implementing risk frameworks at some of the world's largest
+      financial institutions, the author brings firsthand knowledge of how traditional risk models
+      operate—and where they fail. This paper was inspired by foundational work in machine
+      learning for financial risk assessment, including the contributions of Aziz &amp; Dowling (2019)
+      and the growing body of research emerging in the post-COVID era. This paper is part of a
+      broader research initiative in Artificial Intelligence for Financial Risk Management. Any
+      opinions expressed are those of the author and not necessarily those of her current or
+      former employers, including Bank of America, HSBC, Citibank, and EY, or any other
+      affiliated institutions.
+    </p>
+
+    <p class="copyright">
+      © 2022 by Shweta Khosla. All rights reserved. Short sections of text, not to exceed two
+      paragraphs, may be quoted without explicit permission provided that full credit, including
+      © notice, is given to the source.
+    </p>
+
+    <h2>Abstract</h2>
+
+    <p>
+      Market risk management—the practice of quantifying and mitigating potential losses
+      from adverse movements in financial markets—has been fundamentally transformed
+      by artificial intelligence and machine learning techniques. Drawing on the author's
+      experience implementing risk frameworks at HSBC, Bank of America, and Citibank,
+      this article examines how AI is reshaping the risk function at the world's largest banks.
+      Traditional approaches, including Value-at-Risk (VaR) and historical simulation, rely
+      on linear assumptions and backward-looking data that often fail to capture the
+      complexity, velocity, and interconnectedness of modern financial markets.
+    </p>
+
+    <p>
+      This article synthesizes advances across four complementary streams: (1) deep reinforcement
+      learning for dynamic portfolio optimization under uncertainty; (2) large language
+      models and their implications for systemic risk and market fragility; (3) machine
+      learning approaches for forecasting market stress and volatility; and (4) the critical
+      role of data infrastructure in enabling AI-driven risk management. We present
+      quantitative comparisons of model performance and discuss the emerging challenge
+      of AI-induced systemic risk—where coordinated actions from multiple AI systems
+      could trigger simultaneous "buy" or "sell" signals, amplifying market crashes or
+      bubbles.
+    </p>
+
+    <p>
+      <strong>The bottom line in plain English:</strong> AI is making market risk management
+      faster and smarter, but it's also creating a new danger—when every bank uses the
+      same AI models trained on the same data, they all end up making the same mistakes
+      at the same time. The very technology designed to protect banks could end up
+      blowing them up together.
+    </p>
+
+    <p class="keywords">
+      <strong>Keywords —</strong> market risk, artificial intelligence, machine learning,
+      deep reinforcement learning, systemic risk, portfolio optimization, Value-at-Risk,
+      volatility forecasting
+    </p>
+
+    <h2>I. Introduction</h2>
+
+    <p>
+      Market risk—the risk of losses in on- and off-balance sheet positions arising from
+      movements in market prices—remains a central concern for global financial institutions.
+      At banks like HSBC, Bank of America, and Citibank, market risk management is a daily,
+      hourly, minute-by-minute challenge. Trading desks across continents face shifting interest
+      rates, currency fluctuations, equity volatility, and commodity price swings—all while
+      regulators demand ever-greater transparency and capital buffers.
+    </p>
+
+    <p>Traditional approaches to market risk management include:</p>
+
+    <ul>
+      <li><strong>Value-at-Risk (VaR):</strong> Estimates the maximum loss over a target horizon at a given confidence level, but assumes normal distributions and stable correlations.</li>
+      <li><strong>Expected Shortfall (ES):</strong> Captures tail risk but remains backward-looking.</li>
+      <li><strong>Historical simulation:</strong> Relies on past data that may not predict future regimes.</li>
+      <li><strong>GARCH models:</strong> Capture volatility clustering but struggle with non-linear dynamics.</li>
+    </ul>
+
+    <p>
+      The 2008 financial crisis, the 2010 Flash Crash, and the COVID-induced market turmoil of
+      2020 have underscored the limitations of these traditional models. In my years at HSBC,
+      Bank of America, and Citibank, I witnessed firsthand how risk models built on historical
+      data failed to anticipate regime shifts—because they were designed to look backward, not
+      forward.
+    </p>
+
+    <p>
+      The corporate downfalls of the early 2000s, the global financial crisis, and the COVID-19
+      pandemic have pushed companies to improve risk management practices across all
+      sectors. From an information technology perspective, risk management has dual value:
+      operational risk management and ensuring data availability to applications and business
+      lines. This last aspect is perhaps the most critical in the era of big data, where application
+      tasks are increasingly data-intensive.
+    </p>
+
+    <p>
+      The past decade has witnessed rapid adoption of machine learning and AI techniques in
+      market risk management. A bibliometric analysis of the field reveals a shift from traditional
+      approaches based on foreign exchange derivatives toward deep learning, opening
+      opportunities in risk management, financial contracts, and forecasting. The research
+      focuses on leading concepts such as classification, fraud detection, smart contracts, and
+      big data, pointing to future directions in financial and technological evolution.
+    </p>
+
+    <p>
+      AI has had a tremendous impact on financial management research, revolutionizing how
+      financial data is analyzed and decisions are made. It has the ability to improve accuracy
+      and efficiency while lowering costs and providing fresh insights into financial markets and
+      investments.
+    </p>
+
+    <p>
+      This article reviews contemporary AI/ML approaches to market risk management,
+      synthesizing findings from foundational contributions and empirical studies published
+      through 2022. We organize the discussion around architectural innovations, empirical
+      performance, systemic risk implications, and practical considerations for deployment in
+      global financial institutions.
+    </p>
+
+    <h2>II. A Real-World Example: The 2010 Flash Crash and the Pandemic of 2020 in Plain English</h2>
+
+    <p>Let me tell you a story that explains why all of this matters.</p>
+
+    <p><strong>May 6, 2010. 2:32 PM Eastern Time.</strong></p>
+
+    <p>
+      In the span of 36 minutes, the U.S. stock market experienced one of the most terrifying
+      events in financial history. The Dow Jones Industrial Average plunged nearly 1,000
+      points—the largest intraday drop in its history—and then recovered just as quickly.
+      Trillions of dollars in value vanished and reappeared. For those 36 minutes, the market
+      simply stopped making sense.
+    </p>
+
+    <p><strong>What happened?</strong></p>
+
+    <p>
+      A single mutual fund firm decided to sell a large position in E-mini S&amp;P 500 futures.
+      Nothing unusual there—funds do this every day. But instead of executing the trade
+      carefully, they used an automated algorithm programmed to sell without regard to price
+      or market conditions.
+    </p>
+
+    <p>
+      When that massive sell order hit the market, high-frequency trading algorithms saw the
+      selling and did what they were programmed to do: they got out of the way. They stopped
+      buying. Some started selling themselves. Liquidity evaporated. Prices fell so fast that
+      human traders couldn't react.
+    </p>
+
+    <p><strong>Now fast forward to 2020.</strong></p>
+
+    <p>
+      At the beginning of 2020, the COVID-19 pandemic caused a sharp decline in equity
+      market indices, which remained stagnant for a considerable period. This resulted in
+      significant losses for many investors. Despite extensive research on stock market
+      prediction and the development of various effective models, there had been no specific
+      effort to create stable models during a financial crisis.
+    </p>
+
+    <p>
+      The pandemic era taught us something crucial: financial time series are very noisy, not
+      stationary, and mostly considerably short. Traditional models struggled. Machine learning
+      techniques that performed well in back testing often exhibited significant performance
+      fluctuations in off-sample environments, amid market structure changes, or during
+      extreme market conditions.
+    </p>
+
+    <p><strong>The AI-era lesson for today:</strong></p>
+
+    <p>
+      Now imagine that same 2010 scenario, but instead of a handful of simple algorithms, you
+      have hundreds of sophisticated AI models—all trained on similar data, all using similar
+      architectures, all making decisions in milliseconds.
+    </p>
+
+    <p>
+      When one AI starts selling, the others don't just get out of the way. They recognize the
+      pattern. They've seen this in their training data. They know what typically happens next.
+      And because they all know the same thing, they all do the same thing at the same time.
+    </p>
+
+    <p><strong>That's the systemic risk this paper is about.</strong></p>
+
+    <p>
+      The 2010 Flash Crash was caused by one algorithm and amplified by a few others. The
+      next crash could be caused by AI models that are supposed to be protecting us—but
+      instead, because they all think alike, they all run for the exit together.
+    </p>
+
+    <p>
+      This isn't theoretical. At HSBC, Bank of America, and Citibank, we're already seeing signs of
+      this. Risk models that were developed independently end up producing similar signals
+      because they're trained on the same market data and optimized for the same regulatory
+      metrics. The diversity that once protected the system—different banks using different
+      models, different assumptions, different data—is quietly eroding.
+    </p>
+
+    <h2>III. Architectural Approaches</h2>
+
+    <h3>A. Deep Reinforcement Learning for Dynamic Portfolio Optimization</h3>
+
+    <p>
+      Traditional portfolio optimization, rooted in Markowitz's mean-variance framework,
+      assumes static return distributions and known parameters. In reality, financial markets are
+      non-stationary, with time-varying volatility, correlations, and regime shifts. Deep
+      reinforcement learning (DRL) offers a framework for learning optimal trading and
+      allocation policies directly from market interactions.
+    </p>
+
+    <p>
+      Portfolio management is the task of obtaining higher excess returns through the flexible
+      allocation of asset weights—common examples include stock selection and enhanced
+      index funds. A large number of strategies have been proposed for portfolio management
+      over the years, and while these strategies have been very effective for most markets, they
+      can also fail in some markets with high volatility. The reason is that these traditional
+      strategies are not strong in dealing with market information; they either focus on single-
+      period information or utilize simple representations of multiple periods, which are clearly
+      not sufficient for highly non-stationary markets.
+    </p>
+
+    <p>
+      Deep reinforcement learning addresses this by enabling models to learn directly from
+      market interactions. The general solution involves scoring the potential of assets, buying
+      assets with upside potential while increasing their weighting, and selling assets likely to
+      fall or that are relatively weak.
+    </p>
+
+    <p>In a DRL framework for portfolio management, the model processes three key components:</p>
+
+    <ol>
+      <li><strong>Long sequence representations</strong> extracted from historical market data.</li>
+      <li><strong>Cross-asset relationships</strong> modeled through attention mechanisms that capture interdependencies.</li>
+      <li><strong>Portfolio generation</strong> that outputs investment proportions optimized for risk-adjusted returns.</li>
+    </ol>
+
+    <p>
+      Recent advances have shown that models based on the Transformer architecture can yield
+      superior results in sequence modeling tasks relevant to portfolio management. The ability
+      of Transformer-based models to capture long-range dependencies and interactions
+      makes them particularly well-suited for financial applications, though the quadratic
+      complexity of traditional Transformers must be carefully managed for high-frequency
+      scenarios.
+    </p>
+
+    <h3>B. Machine Learning for Market Stress Prediction</h3>
+
+    <p>
+      The use of machine learning to assess and manage risk has gained significant traction in
+      recent years. Research has investigated the potential of machine learning in identifying
+      deficiencies in asset risk management, conducting holistic assessments of financial risks,
+      and analyzing risks in cryptocurrency markets.
+    </p>
+
+    <p>
+      For market stress prediction, ensemble methods such as random forests and gradient
+      boosting have proven particularly effective. These models capture non-linear interactions
+      among market variables and provide feature importance rankings that help risk managers
+      understand which factors most predict stress.
+    </p>
+
+    <p>
+      Recurrent neural networks, particularly Long Short-Term Memory (LSTM) networks, model
+      temporal dependencies in market data. For a sequence of observations, the LSTM updates
+      a hidden state that captures memory of past patterns—enabling the model to learn from
+      historical stress events and identify early warning signals.
+    </p>
+
+    <p>
+      The 2008 global financial crisis and the COVID-19 pandemic both decreased economic
+      growth and led to high uncertainty in global stock markets. Financial stress information is
+      closely linked to financial crises, making the predictive role of financial stress indices
+      critically important. Research has shown that combination predictions based on financial
+      stress categories can improve the predictability of realized volatility during crisis periods.
+    </p>
+
+    <h3>C. Data Infrastructure and Operational Risk</h3>
+
+    <p>
+      From an infrastructure perspective, risk management becomes an element of value. The
+      basic principle is the elimination of manual operations, now possible thanks to
+      technologies that enable companies to collect and analyze data from any source, of any
+      size and nature, and anywhere. The challenge for businesses is not in data storage but in
+      data's availability, accessibility, and usability in order to be evaluated and exploited at
+      multiple levels, by multiple people, with increasingly advanced tools, services, and
+      applications.
+    </p>
+
+    <p>
+      Storage-related planning could be a risk for companies riding the wave of big data or AI.
+      Data-intensive tasks require adequate infrastructural support, but programming may be
+      insufficient for the most advanced workloads, resulting in operational risk from data
+      unavailability. On the other hand, overestimated planning introduces risks ranging from
+      economics to system management.
+    </p>
+
+    <p>
+      The intelligence of machine learning technologies helps manage the risks of data
+      availability by predicting storage capacity and performance needs, and even modeling
+      and upgrading hardware systems accordingly.
+    </p>
+
+    <h3>D. The Challenge of Model Risk in Financial Institutions</h3>
+
+    <p>
+      Despite their advantages, machine learning techniques in financial market risk
+      measurement struggle with some inherent difficulties: financial time series are very noisy,
+      not stationary, and mostly considerably short. A sequential learning approach based on
+      Kalman filtering mechanisms for general stochastic processes provides a first step in
+      separating parameter dynamics from the ubiquitous noise component. The core idea is to
+      use stylized facts inherent to financial markets time series, such as time-varying measures
+      of volatility.
+    </p>
+
+    <p>
+      When tested using real market data containing the outbreak of the global pandemic in
+      2020 and the beginning of major geopolitical events, these approaches perform better
+      than the historical simulation approach used by many firms in the banking industry to
+      meet regulatory capital requirements. Due to their simplicity, these methods have a high
+      degree of explainability and interpretability, which decreases inherent model risk.
+    </p>
+
+    <p>
+      Compared to classical model risk frameworks, the emphasis must be placed on the more
+      prominent role of data. The simple approaches described here show that machine
+      learning in financial market risk does not have to get lost in noise.
+    </p>
+
+    <h2>IV. Systemic Risk and Regulatory Concerns</h2>
+
+    <h3>A. The "Apprentice Effect" and Herding Behavior</h3>
+
+    <p>
+      A critical finding from recent research is that AI systems themselves may introduce new
+      forms of systemic risk. The core concern is coordination: if all AI models are trained on
+      similar data (historical prices, financial news, economic indicators) and built on similar
+      architectures, their predictions and trading signals may become highly correlated.
+      Simultaneous "sell" signals from many funds could trigger cascading market crashes;
+      simultaneous "buy" signals could inflate asset bubbles.
+    </p>
+
+    <p>
+      When AI is used as an investment decision tool, algorithms trained using the same
+      patterns can experience what researchers call the "apprentice effect"—causing everyone
+      to buy and sell simultaneously. Combined with the prevalence of high-frequency trading,
+      this amplifies the risk of flash crashes.
+    </p>
+
+    <p>
+      Financial regulators have taken notice. SEC Chair Gary Gensler, who co-authored a paper
+      on deep learning and financial stability in 2020, has warned that AI could become "the
+      center of future crises, future financial crises". The concern stems from the economics of
+      scale and networks: the United States will most likely end up with two or three
+      foundational AI models, deepening interconnections across the economic system and
+      making a financial crash more likely. When one model or data set becomes central, it
+      increases "herding" behavior, meaning everyone relies on the same information and
+      responds similarly.
+    </p>
+
+    <p>
+      In December 2023, U.S. Treasury Secretary Janet Yellen specifically highlighted AI as a
+      factor affecting financial stability, noting that AI tools are often highly technical and
+      opaque—difficult to explain and challenging to monitor for deficiencies. If the financial
+      industry or regulators do not understand AI sufficiently, it could lead to biased or incorrect
+      outcomes.
+    </p>
+
+    <h3>B. European Regulatory Perspectives</h3>
+
+    <p>
+      The European Central Bank has similarly expressed concerns about AI-induced financial
+      stability risks. AI and the digitalization of financial services could amplify and accelerate
+      financial stability risks, particularly when trading apps and social media combine to drive
+      irrational market movements.
+    </p>
+
+    <p>
+      The Bank of England's financial stability reports have noted that while individual firms
+      using AI pose relatively low risk, widespread adoption creates systemic concerns. Even if
+      each financial institution uses AI for small decisions, the "herding effect" can create
+      significant market tilts. The lack of understanding about how AI operates makes it difficult
+      for regulators to demand "responsible" use of the technology.
+    </p>
+
+    <h2>V. Empirical Evidence</h2>
+
+    <h3>A. Performance Benchmarks</h3>
+
+    <p>
+      Research published through 2022 demonstrates the effectiveness of machine learning
+      approaches for market risk management. AI algorithms, with their ability to analyze vast
+      amounts of data, can detect patterns and anomalies that humans may not notice right
+      away and have had a significant impact on financial forecasting and prediction. By
+      analyzing historical data, market trends, and other relevant factors, these models generate
+      predictions about future market movements and investment opportunities.
+    </p>
+
+    <p>
+      In the area of crisis prediction, machine learning has shown particular promise. Studies
+      examining the predictive role of financial stress indices during the COVID-19 and Global
+      Financial Crisis periods have demonstrated that combination predictions based on
+      financial stress categories can improve the accuracy of realized volatility forecasts for
+      global equity indices.
+    </p>
+
+    <h3>B. Navigating the Noise Problem</h3>
+
+    <p>
+      A significant challenge in applying machine learning to market risk is the inherent
+      noisiness of financial data. Financial time series are very noisy, not stationary, and mostly
+      considerably short. This creates difficulties for standard machine learning approaches that
+      assume stable distributions and abundant training data.
+    </p>
+
+    <p>
+      Sequential learning algorithms based on Kalman filtering mechanisms have been
+      developed to overcome some of these disadvantages. These approaches separate
+      parameter dynamics from the ubiquitous noise component, using stylized facts inherent
+      to financial markets time series such as time-varying measures of volatility.
+    </p>
+
+    <p>
+      When tested using real market data—including periods containing the outbreak of the
+      global pandemic in 2020 and geopolitical events in 2022—these approaches outperform
+      the historical simulation approach used by many firms in the banking industry to meet
+      regulatory capital requirements. The simplicity of these methods gives them a high degree
+      of explainability and interpretability, reducing inherent model risk.
+    </p>
+
+    <h2>VI. Discussion and Implications for Global Banks</h2>
+
+    <p>
+      The reviewed studies reveal several converging themes relevant for practitioners at global
+      financial institutions:
+    </p>
+
+    <p>
+      <strong>Deep reinforcement learning enables dynamic, adaptive risk management.</strong>
+      Traditional static optimization fails in non-stationary markets. DRL agents that continuously
+      learn from market interactions can rebalance portfolios and adjust hedges in real time,
+      improving risk-adjusted returns. At HSBC, this could transform how the bank manages its
+      vast multi-asset portfolios across regions.
+    </p>
+
+    <p>
+      <strong>Data infrastructure is as important as algorithms.</strong> AI is among the main tools to
+      support the risk management function, enabling more effective risk management and
+      ensuring maximum reactivity and flexibility to anticipate unexpected events. However, this
+      requires investment in data infrastructure that ensures availability, accessibility, and
+      usability.
+    </p>
+
+    <p>
+      <strong>Machine learning introduces new systemic risks requiring governance.</strong> The apprentice
+      effect and herding behavior mean that AI systems trained on similar data may act in
+      concert, amplifying market movements. Regulators are increasingly focused on this risk,
+      and banks must develop tools to measure and mitigate AI-induced correlation risk. The
+      author's experience at HSBC, Bank of America, and Citibank underscores the importance
+      of robust governance in this area.
+    </p>
+
+    <p>
+      <strong>Explainability remains critical for regulatory compliance.</strong> Black-box models, however
+      accurate, face barriers to adoption in regulated institutions. Approaches with high degrees
+      of explainability and interpretability decrease inherent model risk. At Bank of America,
+      where regulatory submissions require detailed model explanations, interpretability is non-
+      negotiable.
+    </p>
+
+    <p>
+      <strong>The pandemic era validated the need for adaptive methods.</strong> The COVID-19 market
+      turmoil demonstrated that traditional models fail during regime shifts. Machine learning
+      approaches that adapt to changing conditions proved their value during this period.
+    </p>
+
+    <h2>VII. Conclusion</h2>
+
+    <p>
+      Artificial intelligence has fundamentally reshaped market risk management at the world's
+      largest banks. Drawing on the author's experience at HSBC, Bank of America, and Citibank,
+      this article has examined how deep reinforcement learning, machine learning for stress
+      prediction, and adaptive methods are transforming risk functions.
+    </p>
+
+    <p>
+      AI is now among the main tools to support risk management, enabling more effective
+      practices and ensuring maximum reactivity and flexibility to anticipate unexpected events.
+      The intelligence of machine learning technologies helps manage risks by predicting needs
+      and enabling proactive responses.
+    </p>
+
+    <p><strong>Let's return to the 2010 Flash Crash and the 2020 pandemic for a moment.</strong></p>
+
+    <p>
+      The Flash Crash was caused by a relatively simple algorithm. Today's AI systems are
+      infinitely more sophisticated. They can process millions of data points per second, learn
+      complex patterns, and make predictions with startling accuracy. The pandemic proved
+      that adaptive methods can navigate extreme market conditions better than traditional
+      approaches.
+    </p>
+
+    <p>
+      But here's the paradox: because these systems are all learning from the same data and
+      optimizing for the same metrics, they're becoming more alike. And when they're all alike,
+      they all make the same mistakes at the same time.
+    </p>
+
+    <p>
+      The 2010 Flash Crash was a fire caused by one match. The next one could be a fire caused
+      by every bank's AI system simultaneously deciding that the exits are too crowded—and
+      stampeding anyway.
+    </p>
+
+    <p><strong>The bottom line in plain English:</strong></p>
+
+    <p>
+      AI is making market risk management faster and smarter. Banks like HSBC, Bank of
+      America, and Citibank can now spot risks earlier, react faster, and manage their capital
+      more efficiently than ever before.
+    </p>
+
+    <p>
+      But there's a catch. When every bank uses the same AI models trained on the same data,
+      they all end up seeing the same risks at the same time and wanting to make the same
+      trades at the same time. That means instead of protecting the system, AI could end up
+      blowing it up—with everyone rushing for the exit simultaneously.
+    </p>
+
+    <p>
+      The solution isn't to abandon AI. It's to build better governance, more diverse models,
+      smarter regulations, and robust data infrastructure. That's the work ahead—and it's work
+      I'm committed to, drawing on everything I've learned building credit and market risk
+      frameworks at three of the world's largest banks.
+    </p>
+
+    <h2>References</h2>
+
+    <ol class="references">
+      <li>G. Dicuonzo, F. Donofrio, and G. Galeone, "Big Data and Artificial Intelligence to Support Risk Management: A Systematic Literature Review," 2021.</li>
+      <li>"Use of machine learning in the financial sector: an analysis of trends and the research agenda," <em>Discover Artificial Intelligence</em>, vol. 5, 2025.</li>
+      <li>A. R. Sorkin, R. Mattu, S. Kessler, M. de la Merced, and E. Livni, "The S.E.C.'s Chief Is Worried About A.I.," <em>The New York Times</em>, Aug. 2023.</li>
+      <li>E. Benhamou, "Can Deep Reinforcement Learning Solve the Portfolio Allocation Problem? (PhD Manuscript)," <em>SSRN Electronic Journal</em>, 2023.</li>
+      <li>"An enhanced Wasserstein generative adversarial network with Gramian Angular Fields for efficient stock market prediction during market crash periods," <em>ACM Digital Library</em>, Oct. 2023.</li>
+      <li>S. Zakaria, S. M. Abdul Manaf, M. T. Amron, and M. T. Mohd Suffian, "Has the World of Finance Changed? A Review of the Influence of Artificial Intelligence on Financial Management Studies," RePEc, 2023.</li>
+      <li>P. Quell, "Lost in noise? Some thoughts on the use of machine learning in financial market risk measurement," <em>Journal of Risk Management in Financial Institutions</em>, vol. 17, no. 1, pp. 43–52, 2023.</li>
+      <li>陳鴻達, "AI會泡沫化嗎？二張圖看為何與當年的網路股不一樣？會誘發下一場系統性金融風險嗎？," 經濟日報, Apr. 2024.</li>
+      <li>"Online portfolio management via deep reinforcement learning with high-frequency data," ScienceDirect, 2023.</li>
+      <li>Y. Li, C. Liang, and T. L. D. Huynh, "Combination forecast based on financial stress categories for global equity market volatility: the evidence during the COVID-19 and the global financial crisis periods," <em>Applied Economics</em>, 2023.</li>
+    </ol>
+
+  </article>
+
+</main>
+
+<footer>
+  © 2024 Shweta Khosla • Economist
+</footer>
+
+</body>
+</html>
 
