@@ -25,18 +25,33 @@
     }
 
     header {
-      padding: 18px 24px;
+      background: #ffffff;
+      padding: 0;
       border-bottom: 1px solid #dddddd;
     }
 
     header .brand {
-      font-size: 22px;
-      font-weight: bold;
-      letter-spacing: 0.03em;
+      width: 200px;
+      height: 98px;
+      background: #e3120b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
 
-    header .brand span {
-      color: #c20000;
+    header .brand a {
+      color: #ffffff;
+      text-decoration: none;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 33px;
+      font-weight: bold;
+      line-height: 0.9;
+      letter-spacing: -0.03em;
+    }
+
+    header .brand a span {
+      display: block;
     }
 
     .section-bar {
@@ -219,7 +234,10 @@
 
 <header>
   <div class="brand">
-    <span>ECONOMIST-US</span>
+    <a href="/">
+      <span>The</span>
+      <span>Economist</span>
+    </a>
   </div>
 </header>
 
@@ -242,7 +260,7 @@
   </p>
 
   <div class="article-meta">
-    Feb 1st 2020 • By Shweta Khosla • Economist-US
+    Feb 1st 2020 • By Shweta Khosla • Economist
   </div>
 
 
