@@ -1,22 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-<meta name="google-site-verification" content="WcKtie_yV-bGqmUSWmBjoI0NFchCBU9aObS7ECvzaB8" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Machine learning and artificial intelligence in credit risk management | Economist</title>
+<title>Empirical Insights into Systemic Risk: From Housing Boom to Global Financial Crisis | The Economist</title>
 
-  <meta
-    name="description"
-    content="How machine learning and artificial intelligence are reshaping credit risk management, from Bayesian neural networks to ensemble methods and deep learning."
-  >
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Shweta Khosla examines how monetary policy, the global savings glut, securitization and government-sponsored enterprises contributed to the U.S. housing bubble and global financial crisis.">
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       font-family: Georgia, "Times New Roman", serif;
@@ -51,9 +44,7 @@
       letter-spacing: -0.03em;
     }
 
-    header .brand a span {
-      display: block;
-    }
+    header .brand a span { display: block; }
 
     .section-bar {
       background: #f5f5f5;
@@ -101,21 +92,13 @@
       margin: 36px 0 14px;
     }
 
-    .article-body h3 {
-      font-size: 20px;
-      line-height: 1.35;
-      margin: 28px 0 12px;
-    }
-
-    .article-body ul {
+    .article-body blockquote {
+      border-left: 3px solid #bbbbbb;
+      margin: 24px 0;
+      padding: 12px 18px;
+      background: #fafafa;
       font-size: 17px;
       line-height: 1.7;
-      margin: 0 0 20px 24px;
-      padding: 0;
-    }
-
-    .article-body li {
-      margin-bottom: 8px;
     }
 
     .keywords {
@@ -124,7 +107,9 @@
       margin: 20px 0 30px !important;
     }
 
-    .copyright {
+    .summary { font-weight: bold; }
+
+    .source {
       font-size: 14px !important;
       line-height: 1.6 !important;
       color: #666666;
@@ -133,63 +118,7 @@
       border-top: 1px solid #dddddd;
     }
 
-    .equation {
-      font-family: "Times New Roman", Times, serif;
-      font-size: 18px;
-      line-height: 1.7;
-      text-align: center;
-      background: #fafafa;
-      border-left: 3px solid #bbbbbb;
-      margin: 24px 0;
-      padding: 16px 12px;
-      overflow-x: auto;
-    }
-
-    .table-wrapper {
-      width: 100%;
-      overflow-x: auto;
-      margin: 22px 0 28px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 15px;
-      line-height: 1.5;
-    }
-
-    caption {
-      text-align: left;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    th,
-    td {
-      border: 1px solid #bbbbbb;
-      padding: 10px;
-      vertical-align: top;
-    }
-
-    th {
-      background: #f1f1f1;
-      text-align: left;
-    }
-
-    .table-source {
-      font-size: 14px !important;
-      color: #666666;
-      font-style: italic;
-      margin-top: -16px !important;
-    }
-
-    .references {
-      padding-left: 24px;
-      margin-top: 18px;
-    }
-
-    .references li {
+    .references p {
       font-size: 15px;
       line-height: 1.55;
       margin-bottom: 13px;
@@ -205,31 +134,12 @@
     }
 
     @media (max-width: 700px) {
-      .container {
-        padding: 20px;
-      }
-
-      .article-title {
-        font-size: 28px;
-      }
-
-      .article-body p,
-      .article-body ul {
-        font-size: 16px;
-      }
-
-      .equation {
-        font-size: 16px;
-        text-align: left;
-      }
-
-      table {
-        min-width: 680px;
-      }
+      .container { padding: 20px; }
+      .article-title { font-size: 28px; }
+      .article-body p { font-size: 16px; }
     }
   </style>
 </head>
-
 
 <body>
 
@@ -242,767 +152,217 @@
   </div>
 </header>
 
-
 <div class="section-bar">
   Science &amp; Technology
 </div>
 
-
 <main class="container">
 
-  <h1 class="article-title">
-    Machine Learning and Artificial Intelligence in Credit Risk Management:
-    A Review of Contemporary Approaches
-  </h1>
-
-  <p class="article-subtitle">
-    How Bayesian neural networks, ensemble methods and deep learning are
-    reshaping the way banks measure and manage default risk.
-  </p>
-
-  <div class="article-meta">
-    Feb 1st 2020 • By Shweta Khosla • Economist
-  </div>
-
-
-  <article class="article-body">
-
-    <!-- =========================================================
-         ACKNOWLEDGMENTS
-    ========================================================== -->
-
-    <h2>Acknowledgments</h2>
-
-    <p>
-      This work was conducted by Shweta Khosla, whose industry experience
-      in financial services and technology—including roles at Bank of America,
-      HSBC, and Ernst &amp; Young—informed the practical risk management
-      perspectives in this paper.
-    </p>
-
-    <p>
-      The author thanks colleagues and collaborators who provided valuable
-      feedback and insights. This paper was inspired by foundational work in
-      machine learning for financial risk assessment, including the
-      contributions of Lessmann et al. (2015) and Aziz &amp; Dowling (2019).
-    </p>
-
-    <p>
-      This paper is part of a broader research initiative in Artificial
-      Intelligence for Financial Risk Management. Any opinions expressed are
-      those of the author and not necessarily those of her current or former
-      employers, including Bank of America, HSBC, and EY, or any other
-      affiliated institutions.
-    </p>
-
-    <p class="copyright">
-      © 2020 by Shweta Khosla. All rights reserved. Short sections of text,
-      not to exceed two paragraphs, may be quoted without explicit permission
-      provided that full credit, including © notice, is given to the source.
-    </p>
-
-
-    <!-- =========================================================
-         ABSTRACT
-    ========================================================== -->
-
-    <h2>Abstract</h2>
-
-    <p>
-      Credit risk management has been transformed by machine learning and
-      artificial intelligence techniques that enable more accurate default
-      prediction, automated underwriting, and robust risk assessment.
-      This article synthesizes advances across three complementary streams:
-      (1) uncertainty-aware Bayesian neural architectures that improve model
-      calibration; (2) applications of ensemble methods including random
-      forests and gradient boosting; and (3) the emergence of deep learning
-      for financial risk modeling.
-    </p>
-
-    <p>
-      We present quantitative comparisons of model performance on standard
-      metrics (AUC, calibration error) and discuss implications for deployment
-      in regulated financial environments.
-      <strong>
-        The bottom line: AI doesn't just predict who will repay a loan better
-        than traditional methods—it also catches its own mistakes, flags unfair
-        treatment, and keeps working reliably when the economy shifts, making
-        it the smartest employee in the bank's risk department.
-      </strong>
-    </p>
-
-    <p>
-      <strong>Why is the robot riding the bear?</strong>
-      Because in finance, we talk about "bull" and "bear" markets, and this
-      robot—representing cold, hard AI—has finally tamed the beast. It's a
-      playful way of saying that machine learning has learned to ride the
-      unpredictable waves of the financial world, turning a wild bear market
-      into a manageable, data-driven ride. Hang on tight!
-    </p>
-
-    <p class="keywords">
-      <strong>Keywords —</strong>
-      credit risk, machine learning, Bayesian neural networks,
-      ensemble methods, gradient boosting, calibration
-    </p>
-
-
-    <!-- =========================================================
-         I. INTRODUCTION
-    ========================================================== -->
-
-    <h2>I. Introduction</h2>
-
-    <p>
-      Credit risk assessment—the estimation of a borrower's probability of
-      default—remains a cornerstone of financial intermediation. Accurate risk
-      scoring supports capital allocation, regulatory compliance, and portfolio
-      profitability [1]. Traditional approaches, notably logistic regression
-      and expert scorecards, offer interpretability but often fail to capture
-      nonlinear interactions and temporal dynamics in borrower data [2].
-    </p>
-
-    <p>
-      The past decade has witnessed rapid adoption of machine learning (ML)
-      and artificial intelligence (AI) techniques in credit risk modeling.
-      Ensemble methods (random forests, gradient boosting) consistently
-      outperform linear benchmarks, delivering significant AUC gains on public
-      datasets [3]. Deep learning architectures further improve predictive
-      power by learning representations from complex data sources [4].
-    </p>
-
-    <p>
-      However, practical deployment introduces additional requirements:
-      models must remain robust under distribution shift, produce
-      well-calibrated probabilities, and operate efficiently on available
-      data [5].
-    </p>
-
-    <p>
-      This article reviews contemporary ML/AI approaches to credit risk
-      management, synthesizing findings from foundational contributions and
-      empirical studies published through 2020. We organize the discussion
-      around architectural innovations, empirical performance, and practical
-      considerations for deployment in financial institutions.
-    </p>
-
-
-    <!-- =========================================================
-         II. ARCHITECTURAL APPROACHES
-    ========================================================== -->
-
-    <h2>II. Architectural Approaches</h2>
-
-
-    <h3>A. Bayesian Neural Networks for Uncertainty-Aware Risk Scoring</h3>
-
-    <p>
-      Modern credit scoring must provide not only point predictions but also
-      measures of uncertainty. Overconfident errors can lead to costly
-      misdecisions, particularly when the model encounters
-      out-of-distribution applicants [5].
-    </p>
-
-    <p>
-      Bayesian neural networks (BNNs) address this by learning a distribution
-      over weights rather than a single parameter vector. For a training set
-      <em>D</em><sub>train</sub> =
-      {(x<sub>i</sub>, y<sub>i</sub>)}<sub>i=1</sub><sup>N</sup>
-      with features x<sub>i</sub> ∈ R<sup>d</sup> and binary default labels
-      y<sub>i</sub> ∈ {0,1}, the BNN minimizes a negative evidence lower bound
-      (ELBO):
-    </p>
-
-    <div class="equation">
-      ℒ<sub>ELBO</sub>(λ)
-      =
-      − E<sub>q<sub>λ</sub>(W)</sub>
-      [
-      Σ<sub>i∈D<sub>train</sub></sub>
-      log p(y<sub>i</sub> | x<sub>i</sub>, W)
-      ]
-      +
-      KL(q<sub>λ</sub>(W) || p(W)).
-      &nbsp; (1)
-    </div>
-
-    <p>
-      where q<sub>λ</sub>(W) is a variational approximation to the true
-      posterior and p(W) is a prior [6]. After training, the predictive mean
-      and epistemic uncertainty are obtained via Monte Carlo sampling:
-    </p>
-
-    <div class="equation">
-      μ<sub>bnn</sub>(x)
-      =
-      (1 / S)
-      Σ<sub>s=1</sub><sup>S</sup>
-      p(y = 1 | x, W<sup>(s)</sup>),
-      &nbsp;&nbsp;
-      W<sup>(s)</sup> ~ q<sub>λ</sub>(W).
-      &nbsp; (2)
-    </div>
-
-    <div class="equation">
-      u<sub>epi</sub>(x)
-      =
-      Var<sub>s</sub>
-      [
-      p(y = 1 | x, W<sup>(s)</sup>)
-      ].
-      &nbsp; (3)
-    </div>
-
-    <p>
-      High epistemic uncertainty signals cases where the model lacks
-      confidence, enabling risk-sensitive policies such as manual review
-      or referral [6].
-    </p>
-
-
-    <h3>B. Ensemble Methods for Credit Scoring</h3>
-
-    <p>
-      Gradient boosting machines and random forests have become dominant tools
-      for credit risk modeling due to their strong performance on structured
-      data. These methods build collections of decision trees that collectively
-      capture complex interactions among borrower characteristics [7].
-    </p>
-
-    <p>
-      For a dataset with features x<sub>i</sub> and labels y<sub>i</sub>,
-      a gradient boosting model iteratively adds trees to minimize a loss
-      function L(y, F(x)):
-    </p>
-
-    <div class="equation">
-      F<sub>m</sub>(x)
-      =
-      F<sub>m−1</sub>(x)
-      +
-      η
-      Σ<sub>j=1</sub><sup>J<sub>m</sub></sup>
-      γ<sub>jm</sub>
-      1<sub>{x∈R<sub>jm</sub>}</sub>.
-      &nbsp; (4)
-    </div>
-
-    <p>
-      where R<sub>jm</sub> are the regions defined by the j-th tree at
-      iteration m, γ<sub>jm</sub> are the leaf weights, and η is the learning
-      rate [8].
-    </p>
-
-    <p>
-      Empirical studies consistently show that gradient boosting achieves
-      superior discrimination compared to logistic regression, with AUC
-      improvements of 3–7% on standard credit scoring benchmarks [3].
-    </p>
-
-
-    <h3>C. Deep Learning for Sequential and Textual Data</h3>
-
-    <p>
-      Deep learning has enabled modeling of non-traditional data sources in
-      credit assessment. Recurrent neural networks (RNNs) and long short-term
-      memory (LSTM) networks capture temporal patterns in repayment behavior
-      [9].
-    </p>
-
-    <p>
-      For textual data—such as credit bureau narratives or application
-      notes—pre-trained language models like BERT have been adapted to
-      financial domains through architectures like FinBERT [10].
-    </p>
-
-    <p>
-      These approaches generate dense representations:
-    </p>
-
-    <div class="equation">
-      h<sub>t</sub>
-      =
-      RNN(x<sub>t</sub>, h<sub>t−1</sub>),
-      &nbsp;&nbsp;
-      e
-      =
-      Pooling({h<sub>1</sub>, …, h<sub>T</sub>}).
-      &nbsp; (5)
-    </div>
-
-    <p>
-      where x<sub>t</sub> represents the input at time step t,
-      h<sub>t</sub> is the hidden state, and the final embedding e is used
-      for prediction [9]. While computationally intensive, these methods can
-      extract predictive signals missed by traditional models.
-    </p>
-
-
-    <h3>D. Handling Class Imbalance</h3>
-
-    <p>
-      Credit default is a rare event, with positive cases often comprising
-      less than 5% of samples. Standard classifiers trained on imbalanced data
-      tend to predict the majority class, yielding poor recall on defaults
-      [11].
-    </p>
-
-    <p>Common remedies include:</p>
-
-    <ul>
-      <li>
-        <strong>Synthetic oversampling (SMOTE):</strong>
-        Creates synthetic minority examples by interpolating between existing
-        positive instances [11].
-      </li>
-
-      <li>
-        <strong>Cost-sensitive learning:</strong>
-        Assigns higher misclassification costs to false negatives.
-      </li>
-
-      <li>
-        <strong>Weighted loss functions:</strong>
-        Adjusts the loss to emphasize minority class examples.
-      </li>
-    </ul>
-
-    <p>
-      Empirical evidence shows that combining resampling techniques with
-      ensemble methods yields the best trade-off between precision and recall
-      on imbalanced credit data [12].
-    </p>
-
-
-    <!-- =========================================================
-         III. EMPIRICAL EVIDENCE
-    ========================================================== -->
-
-    <h2>III. Empirical Evidence</h2>
-
-
-    <h3>A. Performance Benchmarks</h3>
-
-    <p>
-      Table I summarizes key empirical findings from major comparative studies
-      of ML models for credit scoring. These results reflect the state of
-      knowledge through 2020.
-    </p>
-
-    <div class="table-wrapper">
-
-      <table>
-
-        <caption>
-          Table I. Summary of Empirical Results from Credit Scoring Studies
-          (Pre-2020)
-        </caption>
-
-        <thead>
-          <tr>
-            <th>Study</th>
-            <th>Dataset</th>
-            <th>Models Compared</th>
-            <th>Key Findings</th>
-          </tr>
-        </thead>
-
-        <tbody>
-
-          <tr>
-            <td>Lessmann et al. (2015) [3]</td>
-            <td>8 public credit datasets</td>
-            <td>
-              41 classifiers including logistic regression, SVM,
-              neural nets, boosting
-            </td>
-            <td>
-              Ensemble methods (random forests, gradient boosting) rank
-              highest; average AUC improvement over logistic regression:
-              5–10%
-            </td>
-          </tr>
-
-          <tr>
-            <td>Brown &amp; Mues (2012) [12]</td>
-            <td>4 credit scoring datasets</td>
-            <td>
-              Logistic regression, CART, random forest,
-              gradient boosting
-            </td>
-            <td>
-              Gradient boosting achieves highest AUC; random forest best
-              for imbalanced data
-            </td>
-          </tr>
-
-          <tr>
-            <td>Kruppa et al. (2013) [13]</td>
-            <td>German credit data</td>
-            <td>
-              Random forest, k-NN, logistic regression
-            </td>
-            <td>
-              Random forest significantly outperforms logistic regression
-              on AUC and Brier score
-            </td>
-          </tr>
-
-          <tr>
-            <td>Fitzpatrick &amp; Mues (2016) [14]</td>
-            <td>Mortgage data</td>
-            <td>
-              Logistic regression, random forest, gradient boosting
-            </td>
-            <td>
-              Machine learning methods improve default prediction by
-              10–15% over logistic baseline
-            </td>
-          </tr>
-
-        </tbody>
-
-      </table>
-
-    </div>
-
-
-    <h3>B. Calibration and Probability Accuracy</h3>
-
-    <p>
-      While ML models improve ranking (AUC), they often produce poorly
-      calibrated probabilities. Table II compares calibration performance
-      across model classes.
-    </p>
-
-    <div class="table-wrapper">
-
-      <table>
-
-        <caption>
-          Table II. Calibration Metrics (Brier Score) for Credit Scoring Models
-        </caption>
-
-        <thead>
-
-          <tr>
-            <th>Model</th>
-            <th>Brier Score (Lower is Better)</th>
-            <th>ECE (Expected Calibration Error)</th>
-          </tr>
-
-        </thead>
-
-        <tbody>
-
-          <tr>
-            <td>Logistic Regression</td>
-            <td>0.102–0.115</td>
-            <td>0.025–0.035</td>
-          </tr>
-
-          <tr>
-            <td>Random Forest</td>
-            <td>0.095–0.108</td>
-            <td>0.030–0.045</td>
-          </tr>
-
-          <tr>
-            <td>Gradient Boosting</td>
-            <td>0.088–0.098</td>
-            <td>0.020–0.030</td>
-          </tr>
-
-          <tr>
-            <td>Neural Network</td>
-            <td>0.092–0.105</td>
-            <td>0.025–0.040</td>
-          </tr>
-
-          <tr>
-            <td>Calibrated Boosting</td>
-            <td><strong>0.085–0.092</strong></td>
-            <td><strong>0.012–0.020</strong></td>
-          </tr>
-
-        </tbody>
-
-      </table>
-
-    </div>
-
-    <p class="table-source">
-      Sources: Synthesized from [3], [12], [15].
-    </p>
-
-    <p>
-      Post-hoc calibration techniques—including Platt scaling and isotonic
-      regression—substantially improve probability accuracy without harming
-      discrimination [15].
-    </p>
-
-
-    <h3>C. Variable Importance and Interpretability</h3>
-
-    <p>
-      Regulatory requirements (e.g., Basel Committee guidelines) demand
-      interpretability in credit models. Tree-based methods offer native
-      feature importance measures:
-    </p>
-
-    <div class="equation">
-      I<sub>j</sub>
-      =
-      Σ<sub>t∈T</sub>
-      ΔGini<sub>t</sub>
-      ·
-      1<sub>{t uses feature j}</sub>.
-      &nbsp; (6)
-    </div>
-
-    <p>
-      where ΔGini<sub>t</sub> is the Gini impurity reduction at node t [8].
-      SHAP (SHapley Additive exPlanations) values provide consistent,
-      locally-accurate explanations:
-    </p>
-
-    <div class="equation">
-      φ<sub>j</sub>
-      =
-      Σ<sub>S⊆{1,…,p}\{j}</sub>
-      [
-      |S|! (p−|S|−1)! / p!
-      ]
-      [
-      f(x<sub>S∪{j}</sub>)
-      −
-      f(x<sub>S</sub>)
-      ].
-      &nbsp; (7)
-    </div>
-
-    <p>
-      where φ<sub>j</sub> is the contribution of feature j to prediction
-      f(x) [16]. These tools help bridge the gap between predictive accuracy
-      and regulatory compliance.
-    </p>
-
-
-    <!-- =========================================================
-         IV. DISCUSSION
-    ========================================================== -->
-
-    <h2>IV. Discussion and Implications</h2>
-
-    <p>
-      The reviewed studies reveal several converging themes relevant for
-      practitioners and researchers:
-    </p>
-
-    <p>
-      <strong>Ensemble methods dominate tabular credit data.</strong>
-      Gradient boosting and random forests consistently outperform logistic
-      regression and single classifiers, with typical AUC gains of 5–10%
-      [3], [12].
-    </p>
-
-    <p>
-      <strong>Calibration matters for decision-making.</strong>
-      Models that produce well-calibrated probabilities enable better
-      risk-based pricing and capital allocation. Post-hoc calibration should
-      be standard practice [15].
-    </p>
-
-    <p>
-      <strong>
-        Interpretability is achievable without sacrificing performance.
-      </strong>
-      Feature importance rankings, partial dependence plots, and SHAP values
-      provide transparency into ML credit models, satisfying regulatory
-      expectations [16].
-    </p>
-
-    <p>
-      <strong>Data quality and preprocessing remain critical.</strong>
-      Missing value handling, outlier treatment, and feature engineering
-      significantly impact model performance, often more than algorithm
-      choice [2].
-    </p>
-
-    <p>
-      <strong>Class imbalance requires explicit treatment.</strong>
-      Without corrective measures, standard ML classifiers fail to identify
-      a substantial portion of defaults [11], [12].
-    </p>
-
-
-    <!-- =========================================================
-         V. CONCLUSION
-    ========================================================== -->
-
-    <h2>V. Conclusion</h2>
-
-    <p>
-      Machine learning has fundamentally reshaped credit risk management.
-      Ensemble methods provide state-of-the-art predictive performance on
-      structured data; Bayesian neural networks offer uncertainty
-      quantification for risk-sensitive decisions; and deep learning enables
-      modeling of complex data sources.
-    </p>
-
-    <p>
-      Empirical evidence through 2020 demonstrates that these approaches
-      deliver measurable gains in discrimination, calibration, and
-      operational efficiency.
-    </p>
-
-    <p>
-      For practitioners, the path forward involves combining algorithmic
-      advances with rigorous validation, interpretability, and regulatory
-      compliance. For researchers, opportunities remain in developing methods
-      that are simultaneously accurate, well-calibrated, interpretable, and
-      robust to distribution shift.
-    </p>
-
-
-    <!-- =========================================================
-         REFERENCES
-    ========================================================== -->
-
-    <h2>References</h2>
-
-    <ol class="references">
-
-      <li>
-        E. Dumitrescu, S. Hué, C. Hurlin, and S. Tokpavi,
-        "Machine learning for credit scoring: Improving logistic regression
-        with non-linear decision-tree effects,"
-        <em>European Journal of Operational Research</em>,
-        forthcoming (working paper version 2019).
-      </li>
-
-      <li>
-        L. C. Thomas, D. B. Edelman, and J. N. Crook,
-        <em>Credit Scoring and Its Applications</em>, 2nd ed.
-        Philadelphia, PA: SIAM, 2017.
-      </li>
-
-      <li>
-        S. Lessmann, B. Baesens, H. C. Seow, and L. C. Thomas,
-        "Benchmarking state-of-the-art classification algorithms for credit
-        scoring: An update of research,"
-        <em>European Journal of Operational Research</em>,
-        vol. 247, no. 1, pp. 124–136, 2015.
-      </li>
-
-      <li>
-        S. Aziz and M. Dowling,
-        "Machine learning and AI for risk management,"
-        in <em>Disrupting Finance: FinTech and Strategy in the 21st Century</em>,
-        T. Lynn, J. G. Mooney, P. Rosati, and M. Cummins, Eds.
-        Cham: Palgrave Macmillan, 2019, pp. 33–50.
-      </li>
-
-      <li>
-        Y. Gal and Z. Ghahramani,
-        "Dropout as a Bayesian approximation: Representing model uncertainty
-        in deep learning,"
-        in <em>Proceedings of the 33rd International Conference on Machine
-        Learning (ICML)</em>,
-        New York, NY, 2016, pp. 1050–1059.
-      </li>
-
-      <li>
-        C. Blundell, J. Cornebise, K. Kavukcuoglu, and D. Wierstra,
-        "Weight uncertainty in neural networks,"
-        in <em>Proceedings of the 32nd International Conference on Machine
-        Learning (ICML)</em>,
-        Lille, France, 2015, pp. 1613–1622.
-      </li>
-
-      <li>
-        L. Breiman,
-        "Random forests,"
-        <em>Machine Learning</em>,
-        vol. 45, no. 1, pp. 5–32, 2001.
-      </li>
-
-      <li>
-        J. H. Friedman,
-        "Greedy function approximation: A gradient boosting machine,"
-        <em>Annals of Statistics</em>,
-        vol. 29, no. 5, pp. 1189–1232, 2001.
-      </li>
-
-      <li>
-        S. Hochreiter and J. Schmidhuber,
-        "Long short-term memory,"
-        <em>Neural Computation</em>,
-        vol. 9, no. 8, pp. 1735–1780, 1997.
-      </li>
-
-      <li>
-        D. Araci,
-        "FinBERT: Financial sentiment analysis with pre-trained language
-        models,"
-        <em>arXiv preprint arXiv:1908.10063</em>, 2019.
-      </li>
-
-      <li>
-        N. V. Chawla, K. W. Bowyer, L. O. Hall, and W. P. Kegelmeyer,
-        "SMOTE: Synthetic minority over-sampling technique,"
-        <em>Journal of Artificial Intelligence Research</em>,
-        vol. 16, pp. 321–357, 2002.
-      </li>
-
-      <li>
-        I. Brown and C. Mues,
-        "An experimental comparison of classification algorithms for
-        imbalanced credit scoring data sets,"
-        <em>Expert Systems with Applications</em>,
-        vol. 39, no. 3, pp. 3446–3453, 2012.
-      </li>
-
-      <li>
-        J. Kruppa, A. Schwarz, G. Arminger, and A. Ziegler,
-        "Consumer credit risk: Individual probability estimates using machine
-        learning,"
-        <em>Expert Systems with Applications</em>,
-        vol. 40, no. 13, pp. 5125–5131, 2013.
-      </li>
-
-      <li>
-        T. Fitzpatrick and C. Mues,
-        "An empirical comparison of classification algorithms for mortgage
-        default prediction: Evidence from a distressed mortgage market,"
-        <em>European Journal of Operational Research</em>,
-        vol. 249, no. 2, pp. 427–439, 2016.
-      </li>
-
-      <li>
-        A. Niculescu-Mizil and R. Caruana,
-        "Predicting good probabilities with supervised learning,"
-        in <em>Proceedings of the 22nd International Conference on Machine
-        Learning (ICML)</em>,
-        Bonn, Germany, 2005, pp. 625–632.
-      </li>
-
-      <li>
-        S. M. Lundberg and S.-I. Lee,
-        "A unified approach to interpreting model predictions,"
-        in <em>Advances in Neural Information Processing Systems 30 (NIPS)</em>,
-        Long Beach, CA, 2017, pp. 4765–4774.
-      </li>
-
-    </ol>
-
-  </article>
+<h1 class="article-title">Empirical Insights into Systemic Risk: From Housing Boom to Global Financial Crisis</h1>
 
+<p class="article-subtitle">
+How monetary policy, the global savings glut, securitization, and government-sponsored enterprises combined to inflate — and then unwind — the U.S. housing bubble, tested against nearly three decades of data.
+</p>
+
+<div class="article-meta">
+May 1st 2014 • By Shweta Khosla • The Economist
+</div>
+
+<article class="article-body">
+
+<p class="summary">
+The bottom line, in plain English: the 2007–08 financial crisis wasn't just a housing crash — it was a case study in how a market can quietly detach from its own fundamentals. Statistical tests show that the ordinary links between interest rates, capital flows, and home prices held steady for over a decade, then broke down exactly when the bubble began to inflate, and never fully reset even years after the bust.
+</p>
+
+<p class="keywords">
+<strong>Keywords:</strong> housing bubble, monetary policy, global savings glut, securitization, GSEs, cointegration, Granger causality, systemic risk
+</p>
+
+<h2>I. Introduction</h2>
+
+<p>
+September 2008 marked a turning point in global financial history. On September 7, Fannie Mae and Freddie Mac — two of the largest government-sponsored mortgage agencies in the United States — were seized and nationalized to stabilize their finances. A week later, on September 15, the 158-year-old investment bank Lehman Brothers filed for bankruptcy after being denied Federal Reserve support, triggering a 504-point drop in the Dow, the largest single-day decline in more than seven years. That same day, Merrill Lynch was acquired by Bank of America to avoid its own collapse. The following day, AIG — one of the world's largest insurers — received an $85 billion Federal Reserve bailout to stave off failure.
+</p>
+
+<p>
+By the end of September, interbank lending had effectively frozen, credit markets seized up, and Washington Mutual was seized by federal regulators and sold to JPMorgan Chase.
+</p>
+
+<p>
+On October 3, the U.S. government stepped in with a $700 billion rescue package. The crisis rapidly went global: Germany guaranteed all consumer bank deposits, the UK nationalized Bradford &amp; Bingley, Iceland bailed out its banking system, and India's central bank moved to prevent a bank run on ICICI Bank.
+</p>
+
+<p>
+What followed was the deepest global recession since World War II. While the proximate trigger is widely agreed to have been the collapse of the U.S. housing market, the deeper causes remain genuinely contested. Was reckless monetary policy to blame? Or did structural forces — global capital flows, financial innovation, regulatory failure — play the larger role? This research set out to move beyond narrative explanation and test these competing theories empirically.
+</p>
+
+<h2>II. The Question</h2>
+
+<p>
+The study asked three core questions: How did the housing bubble originate, and what role did monetary policy play in inflating it? What factors beyond monetary policy — financial innovation, government-sponsored enterprises (GSEs), regulatory structure, and global capital flows — contributed to the bubble and its collapse? And what lessons does the evidence offer for preventing a repeat?
+</p>
+
+<h2>III. How the Bubble Formed</h2>
+
+<p>
+A housing bubble is a self-reinforcing psychological loop: buyers believe rising prices make homes “affordable” because appreciation itself becomes a substitute for savings, so the perceived risk of overpaying nearly disappears.
+</p>
+
+<blockquote>
+“Home prices in 2004 were looking like a rocket taking off. It looked like the rocket might come crashing back down to earth.”
+<br><strong>— Robert Shiller, Yale economist</strong>
+</blockquote>
+
+<p>Several forces are commonly blamed for inflating that bubble:</p>
+
+<p>
+<strong>Monetary policy.</strong> Federal Reserve Chairman Ben Bernanke later defended the Fed's low-interest-rate policy of the early 2000s, while economist John Taylor argued it played a central role in fueling the bubble, keeping the federal funds rate well below what standard policy rules — the Taylor Rule — would have prescribed.
+</p>
+
+<p>
+<strong>Securitization.</strong> The banking model shifted from “buy-and-hold,” where lenders kept the mortgages they originated, to “originate-to-distribute,” where mortgages were bundled and sold on to investors as mortgage-backed securities and collateralized debt obligations. This severed the link between the party making the loan and the party bearing its risk.
+</p>
+
+<p>
+<strong>GSE policy.</strong> In 1995, HUD set a national homeownership target of 70%; by 1999 it directed Fannie Mae and Freddie Mac to relax underwriting standards to help meet it. Between 2005 and 2007, the two GSEs purchased roughly $1 trillion in subprime and Alt-A loans — 40% of their total mortgage purchases — while holding just $1.20 of equity for every $100 they had guaranteed or lent.
+</p>
+
+<p>
+<strong>The global savings glut.</strong> Following the 1997 East Asian financial crisis, investment in emerging economies fell relative to savings, pushing a surplus of global capital into U.S. assets. That capital inflow suppressed long-term U.S. interest rates independently of Fed policy — and low rates, whatever their source, fed the housing bubble.
+</p>
+
+<p>
+<strong>Basel capital rules.</strong> Basel I (1988) gave banks latitude to choose their own risk profiles, an approach players exploited through off-balance-sheet exposures and unregulated, highly leveraged intermediaries. Basel II (2004) attempted reform through a “three pillars” framework — minimum capital requirements, supervisory review, and market discipline — but still permitted undercapitalization and encouraged the growth of structured investment vehicles that later proved fragile.
+</p>
+
+<p>
+The evidence also shows this was not a purely American phenomenon: nominal house-price data from Spain, Ireland, Britain, and Australia reveal comparably steep run-ups over the same period, and in some cases even larger ones. Within the U.S., the damage was concentrated in the so-called “Sand States” — Arizona, California, Florida, and Nevada — which saw both the sharpest price appreciation during the boom and the most acute declines afterward.
+</p>
+
+<h2>IV. Testing the Theories: Methodology</h2>
+
+<p>
+Rather than relying on narrative alone, this research applied a battery of econometric techniques to nearly three decades of quarterly U.S. data (1987:Q1–2013:Q1), split into a pre-bubble period (1987–2001), a bubble period (2001–2006), and the full sample.
+</p>
+
+<p>
+The toolkit included trend and correlation analysis; bivariate and multivariate regression; and time-series techniques — unit root testing, cointegration analysis via the Engle-Granger and Johansen approaches, Granger causality testing, and error correction modeling — to determine not just whether variables moved together, but whether one variable's movements could help predict another's, and whether any long-run equilibrium relationship existed between them.
+</p>
+
+<h2>V. What the Data Showed</h2>
+
+<p>
+The correlation analysis revealed a striking pattern: statistically significant relationships between housing variables and their proposed causes — the Fed funds rate, the current account deficit as a share of GDP, mortgage rates, and GDP growth — were far more numerous in the pre-bubble period than during the bubble itself.
+</p>
+
+<blockquote>
+“The number of statistically significant correlations goes down during the bubble period.”
+<br><strong>— Empirical Insights into Systemic Risk</strong>
+</blockquote>
+
+<p>
+In other words, the normal, historically grounded relationships between monetary policy, capital flows, and home prices appeared to break down precisely when the bubble was forming — itself a signature of a market decoupling from fundamentals.
+</p>
+
+<p>
+The cointegration results reinforced this. Using the Johansen approach, the pre-bubble period showed clear, statistically significant long-run equilibrium relationships between housing variables and their economic drivers. In the bubble period, those same relationships persisted in form but became far more unstable — trace and maximum eigenvalue statistics rose sharply, consistent with a system pulling away from its historical anchor.
+</p>
+
+<blockquote>
+“Cointegrating relationships that existed in the pre-bubble period become unstable in the bubble period, with none existing in the entire time period. Confirms bubble formation.”
+<br><strong>— Empirical Insights into Systemic Risk</strong>
+</blockquote>
+
+<p>
+Across the entire 1987–2013 period, no cointegrating relationship could be established at all — meaning that whatever equilibrium had existed before the bubble did not simply reassert itself afterward; the relationship between housing markets and its traditional drivers had fundamentally changed.
+</p>
+
+<p>
+Granger causality tests added a directional dimension: in the pre-bubble period, Fed funds rates, current account balances, and other macro variables collectively “Granger-caused” housing starts and home price indices with high statistical confidence, with p-values as low as 0.001. That predictive relationship persisted into the bubble period as well, suggesting these factors continued to move housing markets even as the overall system was destabilizing.
+</p>
+
+<h2>VI. Conclusion and Contribution</h2>
+
+<p>
+Taken together, the evidence supports several conclusions. First, a real housing bubble did exist, verified through direct econometric testing rather than casual observation. Second, both loose monetary policy and the global savings glut appear to have driven the bubble — individually in the pre-bubble years, and in combination with other factors once the bubble was actively inflating.
+</p>
+
+<p>
+Third, the relationships between housing markets and macroeconomic fundamentals became measurably more complex and unstable during the bubble period, and the absence of cointegration over the full sample period indicates the housing market's relationship with its historical drivers had not returned to its pre-crisis equilibrium even years later.
+</p>
+
+<p>
+This research contributes to the broader literature in several ways: by extending the analysis window through 2013 to capture the full arc from boom through bust and recovery; by offering a theoretical account of the bubble's causes grounded in direct statistical testing rather than narrative alone; and by providing an econometric methodology — trend analysis, cointegration, and Granger causality — that can be applied to test for housing bubbles in other countries, or adapted to detect bubble dynamics in other asset classes entirely.
+</p>
+
+<blockquote>
+“The technique employed in this research can help to verify bubbles in other asset markets.”
+<br><strong>— Empirical Insights into Systemic Risk</strong>
+</blockquote>
+
+<p>
+The financial crisis of 2007–08 was not the product of any single cause. It was the interaction of loose monetary policy, an unprecedented wave of global capital inflows, a securitization system that diluted accountability, GSE policies that expanded risky lending, and a regulatory framework that failed to keep pace — a lesson worth remembering as new asset bubbles inevitably form.
+</p>
+
+<p class="source">
+<strong>Source:</strong> Shweta Khosla, “Understanding the 2007-08 Financial Crisis, the Story of the Housing Bubble and Bust: An Empirical Analysis,” M.S. thesis, University of North Carolina at Charlotte, 2013; and the accompanying presentation “Empirical Insights into Systemic Risk: From Housing Boom to Global Financial Crisis.”
+</p>
+
+<h2>VII. References</h2>
+
+<div class="references">
+
+<p>Bernanke, Ben. 2010. “Monetary Policy and the Housing Bubble.” American Economic Association meeting, Atlanta, GA, January 3, 2010.</p>
+
+<p>Bernanke, Ben. 2005. “The Global Saving Glut and the U.S. Current Account Deficit.” Sandridge Lecture, Virginia Association of Economists, Richmond, Virginia, April 14, 2005.</p>
+
+<p>Bernardos, Gonzalo. 2009. “The Rise and Fall of the First Global Real Estate Bubble.” June 2009.</p>
+
+<p>Case, K.E., and Shiller, R.J. 2003. “Is There a Bubble in the Housing Market?” Brookings Papers on Economic Activity, 2, pp. 299–342.</p>
+
+<p>Dickey, D., and Fuller, W. 1979. “Distribution of the Estimators for Autoregressive Time Series with a Unit Root.” Journal of the American Statistical Association, Vol. 74, pp. 427–431.</p>
+
+<p>Engle, Robert, and Granger, Clive. 1987. “Co-integration and Error Correction: Representation, Estimation and Testing.” Econometrica, Vol. 55, Issue 2, pp. 251–276.</p>
+
+<p>Federal Deposit Insurance Corporation. 2009. “The 2009 Economic Landscape; The Sand States: Anatomy of a Perfect Housing-Market Storm.”</p>
+
+<p>Federal Reserve Bank of St. Louis. 2009. “The Financial Crisis: A Timeline of Events and Policy Actions.”</p>
+
+<p>Gallin, J. 2006. “The Long-Run Relationship Between House Prices and Income.” Real Estate Economics, 34, pp. 417–438.</p>
+
+<p>Granger, C.W., and Newbold, P. 1974. “Spurious Regressions in Econometrics.” Journal of Econometrics, pp. 111–120.</p>
+
+<p>Greenspan, Alan. 2010. “The Crisis.” Brookings Papers on Economic Activity, March 2010.</p>
+
+<p>Johansen, S. 1995. “Likelihood-Based Inference in Cointegrated Vector Autoregressive Models.” Oxford University Press.</p>
+
+<p>Johansen, S. 1991. “Estimation and Hypothesis Testing on Cointegrating Vectors in Gaussian Vector Autoregressive Models.” Econometrica, 59, pp. 1551–1580.</p>
+
+<p>Kohn, Jonathan, and Bryant, Sarah K. 2010. “An Econometric Interpretation of the Recent US Housing Boom.” Research in Business and Economics Journal.</p>
+
+<p>Mikhed, V., and Zemcik, P. 2009. “Testing for Bubbles in Housing Markets: A Panel Data Approach.” Journal of Real Estate Finance and Economics, 38, pp. 366–386.</p>
+
+<p>S&amp;P/Case-Shiller. 2013. U.S. National Home Price Index Statistics data.</p>
+
+<p>Shiller, Robert J. 2008. <em>The Subprime Solution: How Today's Global Financial Crisis Happened, and What to Do About It.</em> Princeton University Press.</p>
+
+<p>Taylor, John. 2010. “The Fed and the Crisis: A Reply to Ben Bernanke.” The Wall Street Journal, January 10, 2010.</p>
+
+<p>Taylor, John. 2007. “Housing and Monetary Policy.” NBER Working Paper Series 13682, December 2007.</p>
+
+<p>Zhou, W.X., and Sornette, D. 2006. “Is There a Real-Estate Bubble in the USA?” Physica A, 361, pp. 297–308.</p>
+
+<p>Zhou, Su. 2001. “The Power of Cointegration Tests Versus Data Frequency and Time Spans.” Southern Economic Journal, 67(4), pp. 906–921.</p>
+
+<p><em>Full reference list and methodology appendix available in the source thesis, Khosla (2013), University of North Carolina at Charlotte.</em></p>
+
+</div>
+
+</article>
 </main>
 
-
 <footer>
-  © 2020 Shweta Khosla • Economist
+  © 2014 Shweta Khosla • The Economist
 </footer>
 
 </body>
