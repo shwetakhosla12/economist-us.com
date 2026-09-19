@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Empirical Insights into Systemic Risk: From Housing Boom to Global Financial Crisis | Shweta Khosla</title>
+
+<meta name="description" content="Shweta Khosla examines how monetary policy, the global savings glut, securitization and government-sponsored enterprises contributed to the U.S. housing bubble and global financial crisis.">
+
+<style>
+body {
+    margin: 0;
+    background: #ffffff;
+    color: #222;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+header {
+    border-top: 8px solid #e3120b;
+    border-bottom: 1px solid #ccc;
+    padding: 18px 20px;
+}
+
+.brand {
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+main {
+    max-width: 820px;
+    margin: 45px auto;
+    padding: 0 24px 60px;
+}
+
+h1 {
+    font-size: 46px;
+    line-height: 1.08;
+    margin-bottom: 18px;
+}
+
+.subtitle {
+    font-size: 21px;
+    line-height: 1.45;
+    color: #555;
+}
+
+.byline {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    margin: 25px 0 35px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.summary {
+    font-size: 20px;
+    line-height: 1.6;
+    font-weight: bold;
+}
+
+.keywords {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #555;
+    margin: 25px 0;
+}
+
+h2 {
+    font-size: 28px;
+    margin-top: 45px;
+}
+
+p, li {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+blockquote {
+    border-left: 4px solid #e3120b;
+    margin: 30px 0;
+    padding: 5px 25px;
+    font-size: 21px;
+    line-height: 1.5;
+}
+
+.source {
+    margin-top: 45px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.references p {
+    font-size: 15px;
+    line-height: 1.5;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="brand">Economist US</div>
+</header>
+
+<main>
+
+<h1>Empirical Insights into Systemic Risk: From Housing Boom to Global Financial Crisis</h1>
+
+<p class="subtitle">
+How monetary policy, the global savings glut, securitization, and government-sponsored enterprises combined to inflate — and then unwind — the U.S. housing bubble, tested against nearly three decades of data.
+</p>
+
+<div class="byline">
+May 1, 2014 &nbsp;•&nbsp; By Shweta Khosla
+</div>
+
+<p class="summary">
+The bottom line, in plain English: the 2007–08 financial crisis wasn't just a housing crash — it was a case study in how a market can quietly detach from its own fundamentals. Statistical tests show that the ordinary links between interest rates, capital flows, and home prices held steady for over a decade, then broke down exactly when the bubble began to inflate, and never fully reset even years after the bust.
+</p>
+
+<p class="keywords">
+<strong>Keywords:</strong> housing bubble, monetary policy, global savings glut, securitization, GSEs, cointegration, Granger causality, systemic risk
+</p>
+
+<h2>I. Introduction</h2>
+
+<p>
+September 2008 marked a turning point in global financial history. On September 7, Fannie Mae and Freddie Mac — two of the largest government-sponsored mortgage agencies in the United States — were seized and nationalized to stabilize their finances. A week later, on September 15, the 158-year-old investment bank Lehman Brothers filed for bankruptcy after being denied Federal Reserve support, triggering a 504-point drop in the Dow, the largest single-day decline in more than seven years. That same day, Merrill Lynch was acquired by Bank of America to avoid its own collapse. The following day, AIG — one of the world's largest insurers — received an $85 billion Federal Reserve bailout to stave off failure.
+</p>
+
+<p>
+By the end of September, interbank lending had effectively frozen, credit markets seized up, and Washington Mutual was seized by federal regulators and sold to JPMorgan Chase.
+</p>
+
+<p>
+On October 3, the U.S. government stepped in with a $700 billion rescue package. The crisis rapidly went global: Germany guaranteed all consumer bank deposits, the UK nationalized Bradford &amp; Bingley, Iceland bailed out its banking system, and India's central bank moved to prevent a bank run on ICICI Bank.
+</p>
+
+<p>
+What followed was the deepest global recession since World War II. While the proximate trigger is widely agreed to have been the collapse of the U.S. housing market, the deeper causes remain genuinely contested. Was reckless monetary policy to blame? Or did structural forces — global capital flows, financial innovation, regulatory failure — play the larger role? This research set out to move beyond narrative explanation and test these competing theories empirically.
+</p>
+
+<h2>II. The Question</h2>
+
+<p>
+The study asked three core questions: How did the housing bubble originate, and what role did monetary policy play in inflating it? What factors beyond monetary policy — financial innovation, government-sponsored enterprises (GSEs), regulatory structure, and global capital flows — contributed to the bubble and its collapse? And what lessons does the evidence offer for preventing a repeat?
+</p>
+
+<h2>III. How the Bubble Formed</h2>
+
+<p>
+A housing bubble is a self-reinforcing psychological loop: buyers believe rising prices make homes “affordable” because appreciation itself becomes a substitute for savings, so the perceived risk of overpaying nearly disappears.
+</p>
+
+<blockquote>
+“Home prices in 2004 were looking like a rocket taking off. It looked like the rocket might come crashing back down to earth.”
+<br><strong>— Robert Shiller, Yale economist</strong>
+</blockquote>
+
+<p>Several forces are commonly blamed for inflating that bubble:</p>
+
+<p>
+<strong>Monetary policy.</strong> Federal Reserve Chairman Ben Bernanke later defended the Fed's low-interest-rate policy of the early 2000s, while economist John Taylor argued it played a central role in fueling the bubble, keeping the federal funds rate well below what standard policy rules — the Taylor Rule — would have prescribed.
+</p>
+
+<p>
+<strong>Securitization.</strong> The banking model shifted from “buy-and-hold,” where lenders kept the mortgages they originated, to “originate-to-distribute,” where mortgages were bundled and sold on to investors as mortgage-backed securities and collateralized debt obligations. This severed the link between the party making the loan and the party bearing its risk.
+</p>
+
+<p>
+<strong>GSE policy.</strong> In 1995, HUD set a national homeownership target of 70%; by 1999 it directed Fannie Mae and Freddie Mac to relax underwriting standards to help meet it. Between 2005 and 2007, the two GSEs purchased roughly $1 trillion in subprime and Alt-A loans — 40% of their total mortgage purchases — while holding just $1.20 of equity for every $100 they had guaranteed or lent.
+</p>
+
+<p>
+<strong>The global savings glut.</strong> Following the 1997 East Asian financial crisis, investment in emerging economies fell relative to savings, pushing a surplus of global capital into U.S. assets. That capital inflow suppressed long-term U.S. interest rates independently of Fed policy — and low rates, whatever their source, fed the housing bubble.
+</p>
+
+<p>
+<strong>Basel capital rules.</strong> Basel I (1988) gave banks latitude to choose their own risk profiles, an approach players exploited through off-balance-sheet exposures and unregulated, highly leveraged intermediaries. Basel II (2004) attempted reform through a “three pillars” framework — minimum capital requirements, supervisory review, and market discipline — but still permitted undercapitalization and encouraged the growth of structured investment vehicles that later proved fragile.
+</p>
+
+<p>
+The evidence also shows this was not a purely American phenomenon: nominal house-price data from Spain, Ireland, Britain, and Australia reveal comparably steep run-ups over the same period, and in some cases even larger ones. Within the U.S., the damage was concentrated in the so-called “Sand States” — Arizona, California, Florida, and Nevada — which saw both the sharpest price appreciation during the boom and the most acute declines afterward.
+</p>
+
+<h2>IV. Testing the Theories: Methodology</h2>
+
+<p>
+Rather than relying on narrative alone, this research applied a battery of econometric techniques to nearly three decades of quarterly U.S. data (1987:Q1–2013:Q1), split into a pre-bubble period (1987–2001), a bubble period (2001–2006), and the full sample.
+</p>
+
+<p>
+The toolkit included trend and correlation analysis; bivariate and multivariate regression; and time-series techniques — unit root testing, cointegration analysis via the Engle-Granger and Johansen approaches, Granger causality testing, and error correction modeling — to determine not just whether variables moved together, but whether one variable's movements could help predict another's, and whether any long-run equilibrium relationship existed between them.
+</p>
+
+<h2>V. What the Data Showed</h2>
+
+<p>
+The correlation analysis revealed a striking pattern: statistically significant relationships between housing variables and their proposed causes — the Fed funds rate, the current account deficit as a share of GDP, mortgage rates, and GDP growth — were far more numerous in the pre-bubble period than during the bubble itself.
+</p>
+
+<blockquote>
+“The number of statistically significant correlations goes down during the bubble period.”
+<br><strong>— Empirical Insights into Systemic Risk</strong>
+</blockquote>
+
+<p>
+In other words, the normal, historically grounded relationships between monetary policy, capital flows, and home prices appeared to break down precisely when the bubble was forming — itself a signature of a market decoupling from fundamentals.
+</p>
+
+<p>
+The cointegration results reinforced this. Using the Johansen approach, the pre-bubble period showed clear, statistically significant long-run equilibrium relationships between housing variables and their economic drivers. In the bubble period, those same relationships persisted in form but became far more unstable — trace and maximum eigenvalue statistics rose sharply, consistent with a system pulling away from its historical anchor.
+</p>
+
+<blockquote>
+“Cointegrating relationships that existed in the pre-bubble period become unstable in the bubble period, with none existing in the entire time period. Confirms bubble formation.”
+<br><strong>— Empirical Insights into Systemic Risk</strong>
+</blockquote>
+
+<p>
+Across the entire 1987–2013 period, no cointegrating relationship could be established at all — meaning that whatever equilibrium had existed before the bubble did not simply reassert itself afterward; the relationship between housing markets and its traditional drivers had fundamentally changed.
+</p>
+
+<p>
+Granger causality tests added a directional dimension: in the pre-bubble period, Fed funds rates, current account balances, and other macro variables collectively “Granger-caused” housing starts and home price indices with high statistical confidence, with p-values as low as 0.001. That predictive relationship persisted into the bubble period as well, suggesting these factors continued to move housing markets even as the overall system was destabilizing.
+</p>
+
+<h2>VI. Conclusion and Contribution</h2>
+
+<p>
+Taken together, the evidence supports several conclusions. First, a real housing bubble did exist, verified through direct econometric testing rather than casual observation. Second, both loose monetary policy and the global savings glut appear to have driven the bubble — individually in the pre-bubble years, and in combination with other factors once the bubble was actively inflating.
+</p>
+
+<p>
+Third, the relationships between housing markets and macroeconomic fundamentals became measurably more complex and unstable during the bubble period, and the absence of cointegration over the full sample period indicates the housing market's relationship with its historical drivers had not returned to its pre-crisis equilibrium even years later.
+</p>
+
+<p>
+This research contributes to the broader literature in several ways: by extending the analysis window through 2013 to capture the full arc from boom through bust and recovery; by offering a theoretical account of the bubble's causes grounded in direct statistical testing rather than narrative alone; and by providing an econometric methodology — trend analysis, cointegration, and Granger causality — that can be applied to test for housing bubbles in other countries, or adapted to detect bubble dynamics in other asset classes entirely.
+</p>
+
+<blockquote>
+“The technique employed in this research can help to verify bubbles in other asset markets.”
+<br><strong>— Empirical Insights into Systemic Risk</strong>
+</blockquote>
+
+<p>
+The financial crisis of 2007–08 was not the product of any single cause. It was the interaction of loose monetary policy, an unprecedented wave of global capital inflows, a securitization system that diluted accountability, GSE policies that expanded risky lending, and a regulatory framework that failed to keep pace — a lesson worth remembering as new asset bubbles inevitably form.
+</p>
+
+<p class="source">
+<strong>Source:</strong> Shweta Khosla, “Understanding the 2007-08 Financial Crisis, the Story of the Housing Bubble and Bust: An Empirical Analysis,” M.S. thesis, University of North Carolina at Charlotte, 2013; and the accompanying presentation “Empirical Insights into Systemic Risk: From Housing Boom to Global Financial Crisis.”
+</p>
+
+<h2>VII. References</h2>
+
+<div class="references">
+
+<p>Bernanke, Ben. 2010. “Monetary Policy and the Housing Bubble.” American Economic Association meeting, Atlanta, GA, January 3, 2010.</p>
+
+<p>Bernanke, Ben. 2005. “The Global Saving Glut and the U.S. Current Account Deficit.” Sandridge Lecture, Virginia Association of Economists, Richmond, Virginia, April 14, 2005.</p>
+
+<p>Bernardos, Gonzalo. 2009. “The Rise and Fall of the First Global Real Estate Bubble.” June 2009.</p>
+
+<p>Case, K.E., and Shiller, R.J. 2003. “Is There a Bubble in the Housing Market?” Brookings Papers on Economic Activity, 2, pp. 299–342.</p>
+
+<p>Dickey, D., and Fuller, W. 1979. “Distribution of the Estimators for Autoregressive Time Series with a Unit Root.” Journal of the American Statistical Association, Vol. 74, pp. 427–431.</p>
+
+<p>Engle, Robert, and Granger, Clive. 1987. “Co-integration and Error Correction: Representation, Estimation and Testing.” Econometrica, Vol. 55, Issue 2, pp. 251–276.</p>
+
+<p>Federal Deposit Insurance Corporation. 2009. “The 2009 Economic Landscape; The Sand States: Anatomy of a Perfect Housing-Market Storm.”</p>
+
+<p>Federal Reserve Bank of St. Louis. 2009. “The Financial Crisis: A Timeline of Events and Policy Actions.”</p>
+
+<p>Gallin, J. 2006. “The Long-Run Relationship Between House Prices and Income.” Real Estate Economics, 34, pp. 417–438.</p>
+
+<p>Granger, C.W., and Newbold, P. 1974. “Spurious Regressions in Econometrics.” Journal of Econometrics, pp. 111–120.</p>
+
+<p>Greenspan, Alan. 2010. “The Crisis.” Brookings Papers on Economic Activity, March 2010.</p>
+
+<p>Johansen, S. 1995. “Likelihood-Based Inference in Cointegrated Vector Autoregressive Models.” Oxford University Press.</p>
+
+<p>Johansen, S. 1991. “Estimation and Hypothesis Testing on Cointegrating Vectors in Gaussian Vector Autoregressive Models.” Econometrica, 59, pp. 1551–1580.</p>
+
+<p>Kohn, Jonathan, and Bryant, Sarah K. 2010. “An Econometric Interpretation of the Recent US Housing Boom.” Research in Business and Economics Journal.</p>
+
+<p>Mikhed, V., and Zemcik, P. 2009. “Testing for Bubbles in Housing Markets: A Panel Data Approach.” Journal of Real Estate Finance and Economics, 38, pp. 366–386.</p>
+
+<p>S&amp;P/Case-Shiller. 2013. U.S. National Home Price Index Statistics data.</p>
+
+<p>Shiller, Robert J. 2008. <em>The Subprime Solution: How Today's Global Financial Crisis Happened, and What to Do About It.</em> Princeton University Press.</p>
+
+<p>Taylor, John. 2010. “The Fed and the Crisis: A Reply to Ben Bernanke.” The Wall Street Journal, January 10, 2010.</p>
+
+<p>Taylor, John. 2007. “Housing and Monetary Policy.” NBER Working Paper Series 13682, December 2007.</p>
+
+<p>Zhou, W.X., and Sornette, D. 2006. “Is There a Real-Estate Bubble in the USA?” Physica A, 361, pp. 297–308.</p>
+
+<p>Zhou, Su. 2001. “The Power of Cointegration Tests Versus Data Frequency and Time Spans.” Southern Economic Journal, 67(4), pp. 906–921.</p>
+
+<p><em>Full reference list and methodology appendix available in the source thesis, Khosla (2013), University of North Carolina at Charlotte.</em></p>
+
+</div>
+
+</main>
+</body>
+</html>
